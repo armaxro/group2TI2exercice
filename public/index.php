@@ -10,3 +10,16 @@ try{
 }catch(Exception $e){
  die($e->getMessage());    
 }
+
+if(isset($_POST['themail'], $_POST[themessage])){
+  $insert = addInforamtions($db, $_POST['themail'], $_POST['themessage']);
+  if (insert){
+    header("location: ./");
+    exit();
+  }else{
+    $message = "Erreur insertion"
+  }
+}
+$information = getInfromations($db);
+
+include_once =getInformations($db);
