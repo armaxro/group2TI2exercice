@@ -22,4 +22,4 @@ if(isset($_POST['themail'], $_POST[themessage])){
 }
 $information = getInfromations($db);
 
-include_once =getInformations($db);
+include_once = getInformations($db);
