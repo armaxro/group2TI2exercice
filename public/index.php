@@ -17,9 +17,9 @@ if(isset($_POST['themail'], $_POST[themessage])){
     header("location: ./");
     exit();
   }else{
-    $message = "Erreur insertion"
+    $message = "Erreur insertion";
 }
 }
 $information = getInfromations($db);
 
-include_once = getInformations($db);
+include_once "../Vues/informations.vue.html.php";
