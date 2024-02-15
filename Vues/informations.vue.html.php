@@ -7,12 +7,18 @@
     <title>Informations</title>
 </head>
 <body>
+  <?php
+  if(isset($message)){
+    echo $message;
+  }
+  ?>
+
 <h1>Formulaire de Contact</h1>
     <div id="colonne_gauche">
     <form action="" method="post">
       <div id="lenom">
-        <label for="nom">Nom</label>
-        <input type="text" name="nom" id="nom" required>
+        <label for="Email">Email</label>
+        <input type="email" name="themail" id="nom" required>
       </div>
       <div id="leprenom">
         <label for="prenom">Prénom</label>
@@ -33,7 +39,7 @@
     <div id="colonne_droite">
       <div id="lemessage">
         <label for="msg">Message</label>
-        <textarea name="message" id="msg" cols="30" rows="10" maxlength="1024"></textarea>
+        <textarea name="themessage" id="msg" cols="30" rows="10" maxlength="1024"></textarea>
       </div>
       <div id="lalangue">
         <label for="langue">Langue</label>
@@ -57,7 +63,7 @@
     <h1>Les Commentaires</h1>
     <section id="informations">
         <?php 
-            foreach (array ($informations) as $information):
+            foreach (array_reverse($informations) as $information):
         ?>
         <div class="information">
             <div>

@@ -11,15 +11,15 @@ try{
  die($e->getMessage());    
 }
 
-if(isset($_POST['themail'], $_POST[themessage])){
-  $insert = addInforamtions($db, $_POST['themail'], $_POST['themessage']);
-  if (insert){
+if(isset($_POST['themail'], $_POST['themessage'])){
+  $insert = addInformation($db, $_POST['themail'], $_POST['themessage']);
+  if ($insert===true){
     header("location: ./");
     exit();
   }else{
-    $message = "Erreur insertion";
+    $message = $insert;
 }
 }
-$information = getInfromations($db);
+$informations = getInformations($db);
 
 include_once "../Vues/informations.vue.html.php";
