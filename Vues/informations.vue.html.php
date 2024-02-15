@@ -54,10 +54,10 @@
     </form>
 
 
-    <h1>Les Commentaire</h1>
+    <h1>Les Commentaires</h1>
     <section id="informations">
         <?php 
-            foreach(array_reverse($informations) as $information):
+            foreach (array ($informations) as $information):
         ?>
         <div class="information">
             <div>
