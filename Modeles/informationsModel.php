@@ -9,8 +9,8 @@ function getInformations(PDO $db)
     return $result;
 }
 
-function addInformation(PDO $db, string $themail, string $themessage): bool|string
-{
+function addInformation(PDO $db, string $themail, string $themessage): bool|string{
+    
     $themessage = htmlspecialchars(strip_tags(trim($themessage)), ENT_QUOTES);
     // false si le courriel n'est pas valide, sinon on le garde
     $themail = filter_var($themail, FILTER_VALIDATE_EMAIL);

@@ -11,7 +11,7 @@ try{
  die($e->getMessage());    
 }
 
-if(isset($_POST['themail'], $_POST['themessage'])){
+if(isset($_POST['themail'], $_POST['themessage'])){ 
   $insert = addInformation($db, $_POST['themail'], $_POST['themessage']);
   if ($insert===true){
     header("location: ./");
