@@ -21,5 +21,7 @@ if(isset($_POST['themail'], $_POST['themessage'])){
 }
 }
 $informations = getInformations($db);
+$nbInformations = count($informations);
 
-include_once "../Vues/informations.vue.html.php";
+include "../Vues/informations.vue.html.php";
+$bd = null;

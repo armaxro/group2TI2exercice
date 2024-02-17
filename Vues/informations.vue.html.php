@@ -14,11 +14,16 @@
   ?>
 
 <h1>Formulaire de Contact</h1>
+   <!--<h2>
+   //<?php 
+  //echo $nbInformations>1 ? "$nbInformations commentaires" : "$nbInformations commentaire"; var_dump($_POST);?>
+  </h2>-->
+  
     <div id="colonne_gauche">
     <form action="" method="post">
       <div id="lenom">
         <label for="Email">Email</label>
-        <input type="email" name="themail" id="nom" required>
+        <input type="email" name="themail" id="nom" placeholder="Votre email" required>
       </div>
       <div id="leprenom">
         <label for="prenom">Prénom</label>
@@ -39,7 +44,7 @@
     <div id="colonne_droite">
       <div id="lemessage">
         <label for="msg">Message</label>
-        <textarea name="themessage" id="msg" cols="30" rows="10" maxlength="1024"></textarea>
+        <textarea name="themessage" id="msg" cols="30" rows="10" maxlength="1024" placeholder="Votre message" required></textarea>
       </div>
       <div id="lalangue">
         <label for="langue">Langue</label>
@@ -62,16 +67,17 @@
 
     <h1>Les Commentaires</h1>
     <section id="informations">
-        <?php 
-            foreach (array_reverse($informations) as $information):array()?>
         <div class="information">
             <div>
+            <?php 
+            foreach ($informations as $information):?>
                 <p><?= $information["themail"]?></p>
-                <p><?=(new DateTime($information["thedate"]))->format('d/m/Y H:i:s')?></p>
+                <p>Posté le <?=(new DateTime($information["thedate"]))->format('d/m/Y H:i:s')?></p>
+                <p><?= $information["themessage"]?></p>
+            <?php endforeach; 
+        ?>
             </div>
-            <p><?= $information["themessage"]?></p>
         </div>
-        
     </section>
     <!-- <script>
         function validateForm(e){

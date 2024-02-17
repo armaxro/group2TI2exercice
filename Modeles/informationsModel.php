@@ -1,6 +1,6 @@
 <?php
 
-function getInformations(PDO $db)
+function getInformations(PDO $db):array
 {
     $sql = "SELECT * FROM Informations ORDER BY thedate ASC";
     $query = $db->query($sql);
@@ -17,8 +17,8 @@ function addInformation(PDO $db, string $themail, string $themessage): bool|stri
 
 
     // si les données ne sont pas valides, on envoie false
-    if (empty($themessage) || $themail === false ) {
-        return false;
+    if ($themail === false|| empty($themessage)) {
+        return "Au moins un des champs invalide";
     }
     // on prépare la requête
     $sql = "INSERT INTO informations (themail, themessage) VALUES ('$themail', '$themessage')";
