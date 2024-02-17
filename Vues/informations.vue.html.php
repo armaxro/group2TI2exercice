@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,20 +63,17 @@
     <h1>Les Commentaires</h1>
     <section id="informations">
         <?php 
-            foreach (array_reverse($informations) as $information):
-        ?>
+            foreach (array_reverse($informations) as $information):array()?>
         <div class="information">
             <div>
-                <p><?= $information["themail"] ?></p>
+                <p><?= $information["themail"]?></p>
                 <p><?=(new DateTime($information["thedate"]))->format('d/m/Y H:i:s')?></p>
             </div>
-            <p><?= $information["themessage"] ?></p>
+            <p><?= $information["themessage"]?></p>
         </div>
-        <?php
-            endforeach;
-        ?>
+        
     </section>
-    <script>
+    <!-- <script>
         function validateForm(e){
         var ageInput = document.getElementById("ddn1").value;
         var birthday = new Date(ageInput);
@@ -105,8 +102,7 @@
              alert("Le mot de passe ne respecte pas les critères");
         } 
     }
-    </script>  
-
+    </script>  -->
     
 </body>
 </html>
